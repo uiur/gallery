@@ -24,12 +24,14 @@ var draw = (function () {
 
     for (i = 0; i < T; i++) {
       ctx.fillStyle = "rgba(" + [null,null,null].map(function(){return Math.floor(255*Math.random())}).join(',') + ",1.0)";
+      ctx.strokeStyle = ctx.fillStyle;
       ctx.beginPath();
       ctx.moveTo(0,0);
       ctx.lineTo(r,0);
       ctx.rotate(2 * Math.PI / T);
       ctx.lineTo(r,0);
       ctx.fill();
+      ctx.stroke();
     }
 
     ctx.restore();
